@@ -1,0 +1,23 @@
+{
+  "name": "string-returning",
+  "version": "0.0.1",
+  "description": "Returning some strings",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "babel": "^4.6.1",
+    "chai": "^2.1.0"
+  },
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "noneyet"
+  },
+  "author": "Tim Tyrrell",
+  "license": "ISC"
+}
