@@ -1,4 +1,4 @@
-import {MentionParser} from '../lib/mentionParser';
+import {MentionParser} from '../lib/mentionParser'
 var chai = require('chai')
 chai.should()
 
@@ -10,7 +10,8 @@ describe('MentionParser', () => {
   describe('with valid input', () => {
     it('returns array of mention names', () => {
       parser.parse("@chris you around?").should.deep.equal({ "mentions": [ "chris" ] })
-      parser.parse("tim@chris you around?").should.deep.equal({ "mentions": [ "chris" ] })
+      parser.parse("@chris$$$ you around?").should.deep.equal({ "mentions": [ "chris" ] })
+      parser.parse("hey tim@chris you around?").should.deep.equal({ "mentions": [ "chris" ] })
       parser.parse("@tim or @chris are you around?").should.deep.equal({ "mentions": [ "tim", "chris" ] })
     })
   })
