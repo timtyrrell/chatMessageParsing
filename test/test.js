@@ -9,22 +9,22 @@ describe('MentionParser', () => {
 
   describe('with valid input', () => {
     it('returns array of mention names', () => {
-      let result = parser.parse("@chris you around?")
-      result.should.deep.equal({ "mentions": [ "chris" ] })
+      parser.parse("@chris you around?").should.deep.equal({ "mentions": [ "chris" ] })
+      parser.parse("tim@chris you around?").should.deep.equal({ "mentions": [ "chris" ] })
+      parser.parse("@tim or @chris are you around?").should.deep.equal({ "mentions": [ "tim", "chris" ] })
     })
   })
 
   describe('with no matches', () => {
     it('returns an empty array', () => {
-      let result = parser.parse("chris you around?")
-      result.should.deep.equal({})
+      parser.parse("chris you around? ").should.deep.equal({})
+      parser.parse("@ ").should.deep.equal({})
     })
   })
 
   describe('with blank text', () => {
     it('returns an empty array', () => {
-      let result = parser.parse("")
-      result.should.deep.equal({})
+      parser.parse("").should.deep.equal({})
     })
   })
 })
