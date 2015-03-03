@@ -7,3 +7,8 @@ npm test
 
 RUN:
 babel-node index.js "(megusta) @timtyrrell at www.willcode4beer.net"
+
+IMPROVEMENTS:
+- More error handling and tests
+- Toughen index.js
+- Switch from callbacks to generators/promises or a library like Q or Bluebird
