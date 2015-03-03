@@ -79,17 +79,29 @@ describe('UrlParser', () => {
   })
 
   describe('with no matches', () => {
-    it('returns an empty array', () => {
-      parser.parse("(asdfghjklqwertyu)").should.deep.equal({})
-      parser.parse("(asdfghjk  )").should.deep.equal({})
-      parser.parse("(asdfghjk").should.deep.equal({})
-      parser.parse("asdfghjk)").should.deep.equal({})
+    it('returns an empty array', (done) => {
+      parser.parse("(asdfghjklqwertyu)", (res) => {
+        res.should.deep.equal({})
+      })
+      parser.parse("(asdfghjk  )", (res) => {
+        res.should.deep.equal({})
+      })
+      parser.parse("(asdf", (res) => {
+        res.should.deep.equal({})
+      })
+      parser.parse("wertyu)", (res) => {
+        res.should.deep.equal({})
+      })
+      done()
     })
   })
 
   describe('with blank text', () => {
-    it('returns an empty array', () => {
-      parser.parse("").should.deep.equal({})
+    it('returns an empty array', (done) => {
+      parser.parse("", (res) => {
+        res.should.deep.equal({})
+      })
+      done()
     })
   })
 })
