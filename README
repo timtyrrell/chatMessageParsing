@@ -1,0 +1,9 @@
+INSTALL:
+npm install -g babel
+npm install
+
+TESTS:
+npm test
+
+RUN:
+babel-node index.js "(megusta) @timtyrrell at www.willcode4beer.net"

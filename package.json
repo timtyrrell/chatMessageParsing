@@ -13,17 +13,17 @@
     "url-regex": "^2.1.2"
   },
   "devDependencies": {
-    "babel": "^4.6.1",
     "chai": "^2.1.0",
     "mocha": "^2.1.0",
     "sinon": "^1.12.2"
   },
   "scripts": {
-    "test": "mocha -w"
+    "test": "mocha -R spec",
+    "testwatch": "mocha -w"
   },
   "repository": {
     "type": "git",
-    "url": "noneyet"
+    "url": "git@github.com:timtyrrell/chatMessageParsing.git"
   },
   "author": "Tim Tyrrell",
   "license": "ISC"
